@@ -24,4 +24,4 @@ this is my FastCampus iOS all in one lecture practicing app!
 
 ## 강의 정보 
 
-[패스트캠퍼스 iOS 올인원 패키지] (https://www.fastcampus.co.kr/dev_online_iosapp)
+[패스트캠퍼스 iOS 올인원 패키지](https://www.fastcampus.co.kr/dev_online_iosapp)
