@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="AppleMusicStApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8Om-si-0Us">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sLk-NH-CqM">
+                                    <size key="itemSize" width="180" height="240"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="20"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TrackCollecionViewCell" id="dqV-hs-AGP" customClass="TrackCollecionViewCell" customModule="AppleMusicStApp" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="20" width="180" height="240"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="cpQ-WW-VnA">
+                                            <rect key="frame" x="0.0" y="0.0" width="180" height="240"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="831-1A-Bt2">
+                                                    <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="831-1A-Bt2" secondAttribute="height" multiplier="1:1" id="80H-7d-fqE"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beach House" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJz-OZ-2Wz">
+                                                    <rect key="frame" x="0.0" y="184" width="180" height="22"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="this is label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ep5-d7-Xhz">
+                                                    <rect key="frame" x="0.0" y="210" width="180" height="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="rJz-OZ-2Wz" firstAttribute="top" secondItem="831-1A-Bt2" secondAttribute="bottom" constant="4" id="5bD-ZA-KG2"/>
+                                                <constraint firstItem="rJz-OZ-2Wz" firstAttribute="leading" secondItem="cpQ-WW-VnA" secondAttribute="leading" id="ADA-iR-SGH"/>
+                                                <constraint firstAttribute="trailing" secondItem="ep5-d7-Xhz" secondAttribute="trailing" id="LyF-5T-rpd"/>
+                                                <constraint firstAttribute="trailing" secondItem="rJz-OZ-2Wz" secondAttribute="trailing" id="Qq3-6i-DPt"/>
+                                                <constraint firstItem="ep5-d7-Xhz" firstAttribute="leading" secondItem="cpQ-WW-VnA" secondAttribute="leading" id="RAs-m5-9xr"/>
+                                                <constraint firstItem="831-1A-Bt2" firstAttribute="leading" secondItem="cpQ-WW-VnA" secondAttribute="leading" id="ZBu-2H-Toe"/>
+                                                <constraint firstItem="831-1A-Bt2" firstAttribute="top" secondItem="cpQ-WW-VnA" secondAttribute="top" id="ZHE-m3-LEa"/>
+                                                <constraint firstAttribute="trailing" secondItem="831-1A-Bt2" secondAttribute="trailing" id="dFc-2R-Ngx"/>
+                                                <constraint firstItem="ep5-d7-Xhz" firstAttribute="top" secondItem="rJz-OZ-2Wz" secondAttribute="bottom" constant="4" id="r9L-UU-Oll"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="trackArtist" destination="ep5-d7-Xhz" id="OHd-fI-NwH"/>
+                                            <outlet property="trackThumbnail" destination="831-1A-Bt2" id="ox2-tM-GOM"/>
+                                            <outlet property="trackTitle" destination="rJz-OZ-2Wz" id="WIE-Kk-QFh"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="yvK-sB-JnZ"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="7mx-ZA-W3D"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8Om-si-0Us" secondAttribute="trailing" id="7xl-bM-jHN"/>
+                            <constraint firstItem="8Om-si-0Us" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="RR3-bC-Blx"/>
+                            <constraint firstItem="8Om-si-0Us" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="XXm-JS-ZDW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8Om-si-0Us" secondAttribute="bottom" id="ugz-O0-GVT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+</document>
