@@ -15,7 +15,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
 }
 
 extension HomeViewController: UICollectionViewDataSource {
@@ -44,7 +44,28 @@ extension HomeViewController: UICollectionViewDataSource {
         switch kind {
         case UICollectionView.elementKindSectionHeader:
             // TODO: 헤더 구성하기
-            return UICollectionReusableView()
+            
+            guard let item = trackManager.todaysTrack else {
+                return UICollectionReusableView()
+            }
+            
+            guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "TrackCollectionHeaderView", for: indexPath) as? TrackCollectionHeaderView else {
+                return UICollectionViewCell()
+            }
+            
+            header.update(with: item)
+            header.tapHandler = { item -> Void in
+                //player를 띄운다.
+                let playerStoryBoard = UIStoryboard.init(name: "Player", bundle: nil)//player
+                guard let playerVC = playerStoryBoard.instantiateViewController(identifier:  "PlayerViewController" ) as? PlayerViewController else {
+                    return
+                }
+                
+                playerVC.simplePlayer.replaceCurrentItem(with: item )
+                self.present(playerVC, animated: true, completion:  nil)
+                print("---> item \(item.convertToTrack()?.title)")
+            }
+            return header
         default:
             return UICollectionReusableView()
         }
@@ -55,8 +76,15 @@ extension HomeViewController: UICollectionViewDelegate {
     // 클릭했을때 어떻게 할까?
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // TODO: 곡 클릭시 플레이어뷰 띄우기
+        let playerStoryBoard = UIStoryboard.init(name: "Player", bundle: nil)//player
+        guard let playerVC = playerStoryBoard.instantiateViewController(identifier: "PlayerViewController" ) as? PlayerViewController else {
+            return
+        }
         
+        let item = self.trackManager.tracks[indexPath.item]
+        playerVC.simplePlayer.replaceCurrentItem(with: item)
         
+        present(playerVC, animated: true, completion: nil)
     }
 }
 
@@ -69,7 +97,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
         let margin: CGFloat = 20
         let width = (collectionView.bounds.width - itemSpacing - margin * 2) / 2
         let height = width + 60
-         
+        
         return CGSize(width: width, height: height)
     }
     

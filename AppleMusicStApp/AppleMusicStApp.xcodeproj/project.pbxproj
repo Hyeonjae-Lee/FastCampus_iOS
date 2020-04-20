@@ -10,7 +10,7 @@
 		187A900D244AFAEE008E5D6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187A900C244AFAEE008E5D6F /* AppDelegate.swift */; };
 		187A900F244AFAEE008E5D6F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187A900E244AFAEE008E5D6F /* SceneDelegate.swift */; };
 		187A9011244AFAEE008E5D6F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187A9010244AFAEE008E5D6F /* ViewController.swift */; };
-		187A9014244AFAEE008E5D6F /*  .storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 187A9012244AFAEE008E5D6F /*  .storyboard */; };
+		187A9014244AFAEE008E5D6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 187A9012244AFAEE008E5D6F /* Main.storyboard */; };
 		187A9016244AFAF0008E5D6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 187A9015244AFAF0008E5D6F /* Assets.xcassets */; };
 		187A9019244AFAF0008E5D6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 187A9017244AFAF0008E5D6F /* LaunchScreen.storyboard */; };
 		187A9027244B0056008E5D6F /* TrackCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187A9024244B0056008E5D6F /* TrackCollectionHeaderView.swift */; };
@@ -52,7 +52,7 @@
 		187A900C244AFAEE008E5D6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		187A900E244AFAEE008E5D6F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		187A9010244AFAEE008E5D6F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		187A9013244AFAEE008E5D6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/ .storyboard"; sourceTree = "<group>"; };
+		187A9013244AFAEE008E5D6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		187A9015244AFAF0008E5D6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		187A9018244AFAF0008E5D6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		187A901A244AFAF0008E5D6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -206,7 +206,7 @@
 		187A9065244B0DB3008E5D6F /* StoryBoard */ = {
 			isa = PBXGroup;
 			children = (
-				187A9012244AFAEE008E5D6F /*  .storyboard */,
+				187A9012244AFAEE008E5D6F /* Main.storyboard */,
 			);
 			path = StoryBoard;
 			sourceTree = "<group>";
@@ -289,7 +289,7 @@
 				187A9016244AFAF0008E5D6F /* Assets.xcassets in Resources */,
 				187A904F244B0332008E5D6F /* Ocean ride __ 海の乗り.mp3 in Resources */,
 				187A9064244B0332008E5D6F /* tranquility.mp3 in Resources */,
-				187A9014244AFAEE008E5D6F /*  .storyboard in Resources */,
+				187A9014244AFAEE008E5D6F /* Main.storyboard in Resources */,
 				187A9054244B0332008E5D6F /* Sleepless.mp3 in Resources */,
 				187A9060244B0332008E5D6F /* im trying to find myself.mp3 in Resources */,
 				187A9063244B0332008E5D6F /* Missing U In The Raining Day.mp3 in Resources */,
@@ -323,12 +323,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		187A9012244AFAEE008E5D6F /*  .storyboard */ = {
+		187A9012244AFAEE008E5D6F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				187A9013244AFAEE008E5D6F /* Base */,
 			);
-			name = " .storyboard";
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		187A9017244AFAF0008E5D6F /* LaunchScreen.storyboard */ = {
