@@ -1,7 +1,7 @@
 # FastCampus_iOS
 this is my FastCampus iOS all in one lecture practicing app! 
 
-## iOS All In One Course
+## iOS All In One Course Process
 
 등급 |  앱 이름 | 비고 | 날짜 
 :----:|:---------:|:------:|:-----:|
