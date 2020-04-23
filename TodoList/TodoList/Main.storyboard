@@ -126,11 +126,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bbh-Lr-8Fj">
                                 <rect key="frame" x="0.0" y="748" width="414" height="65"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wzw-qJ-fQ8">
-                                        <rect key="frame" x="8" y="15" width="281" height="34"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="i want to do.." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wzw-qJ-fQ8">
+                                        <rect key="frame" x="8" y="15.5" width="289" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e9O-7v-qJl">
                                         <rect key="frame" x="364" y="21.5" width="30" height="22"/>
@@ -143,24 +142,38 @@
                                             <color key="titleColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24" weight="bold"/>
                                         </state>
+                                        <connections>
+                                            <action selector="addTaskButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3sH-ee-CLI"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dya-am-2hS">
-                                        <rect key="frame" x="306" y="15" width="46" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dya-am-2hS">
+                                        <rect key="frame" x="307" y="15" width="45" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="45" id="DxO-W0-FqA"/>
+                                            <constraint firstAttribute="height" constant="35" id="hse-UY-gRp"/>
+                                        </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button">
+                                        <state key="normal" title="Today">
                                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <state key="selected">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="isTodayButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UtE-aN-nbf"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="BfW-Zv-lgb"/>
+                                    <constraint firstItem="e9O-7v-qJl" firstAttribute="leading" secondItem="dya-am-2hS" secondAttribute="trailing" constant="12" id="PhP-z8-jtx"/>
+                                    <constraint firstItem="Wzw-qJ-fQ8" firstAttribute="leading" secondItem="Bbh-Lr-8Fj" secondAttribute="leading" constant="8" id="WAb-su-lBO"/>
+                                    <constraint firstItem="dya-am-2hS" firstAttribute="leading" secondItem="Wzw-qJ-fQ8" secondAttribute="trailing" constant="10" id="Zpt-fe-qnv"/>
                                     <constraint firstAttribute="trailing" secondItem="e9O-7v-qJl" secondAttribute="trailing" constant="20" id="erY-sM-T3i"/>
+                                    <constraint firstItem="dya-am-2hS" firstAttribute="centerY" secondItem="e9O-7v-qJl" secondAttribute="centerY" id="ogD-gj-KLO"/>
                                     <constraint firstItem="e9O-7v-qJl" firstAttribute="centerY" secondItem="Bbh-Lr-8Fj" secondAttribute="centerY" id="uny-j2-ZsD"/>
+                                    <constraint firstItem="Wzw-qJ-fQ8" firstAttribute="centerY" secondItem="Bbh-Lr-8Fj" secondAttribute="centerY" id="zEW-wg-RiP"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -176,13 +189,25 @@
                             <constraint firstItem="Dac-Tr-eM7" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="obK-Os-arc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="04c-zv-0j9" appends="YES" id="Lag-0I-DIm"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Tasks" image="checkmark.circle.fill" catalog="system" id="zan-H5-GGu"/>
                     <connections>
+                        <outlet property="addButton" destination="e9O-7v-qJl" id="Ocv-wz-yz9"/>
                         <outlet property="collectionView" destination="Dac-Tr-eM7" id="MeX-33-IFU"/>
+                        <outlet property="inputTextField" destination="Wzw-qJ-fQ8" id="Aah-nF-QA7"/>
+                        <outlet property="inputViewBottom" destination="b0d-hF-CBA" id="eaD-ox-Jit"/>
+                        <outlet property="isTodayButton" destination="dya-am-2hS" id="hH4-ch-vV4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="04c-zv-0j9">
+                    <connections>
+                        <action selector="tapped:" destination="BYZ-38-t0r" id="Fga-hk-vYd"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="708.69565217391312" y="686.38392857142856"/>
         </scene>
@@ -192,6 +217,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="2vS-wE-ouj" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="o9d-GK-rlc">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

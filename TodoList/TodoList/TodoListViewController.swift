@@ -24,8 +24,8 @@ class TodoListViewController: UIViewController {
         super.viewDidLoad()
         
         // TODO: 키보드 디텍션
-        
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(adjustInputView), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(adjustInputView), name: UIResponder.keyboardWillHideNotification, object: nil)
         // TODO: 데이터 불러오기
         todoListViewModel.loadTasks()
         
@@ -42,23 +42,47 @@ class TodoListViewController: UIViewController {
     
     @IBAction func isTodayButtonTapped(_ sender: Any) {
         // TODO: 투데이 버튼 토글 작업
-        
+        isTodayButton.isSelected = !isTodayButton.isSelected 
     }
     
     @IBAction func addTaskButtonTapped(_ sender: Any) {
         // TODO: Todo 태스크 추가
         // add task to view model
         // and tableview reload or update
+        
+        guard let detail = inputTextField.text, detail.isEmpty == false else {
+            return
+        }
+        let todo = TodoManager.shared.createTodo(detail: detail, isToday: isTodayButton.isSelected)
+        todoListViewModel.addTodo(todo)
+        collectionView.reloadData()
+        inputTextField.text = ""
+        isTodayButton.isSelected = false
     }
     
     // TODO: BG 탭했을때, 키보드 내려오게 하기
+    @IBAction func tapped(_ sender: Any) {
+        inputTextField.resignFirstResponder()//사용자에게 제일 먼저 반응하는녀석인데 그것을 안한다고 하는것
+        
+    }
 }
 
 extension TodoListViewController {
     @objc private func adjustInputView(noti: Notification) {
         guard let userInfo = noti.userInfo else { return }
         // TODO: 키보드 높이에 따른 인풋뷰 위치 변경
+        guard let keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
         
+        if noti.name == UIResponder.keyboardWillShowNotification {
+            let adjustmentationHeight = keyboardFrame.height - view.safeAreaInsets.bottom
+            //아이폰이 노치가 나오면서 키보드 높이뿐만 아니라 앱의 노치 부분까지 빼줘야 한다, 그것이 바로 safeArea인데
+            inputViewBottom.constant = adjustmentationHeight//0이엇는데 키보드 높이 계산해서 올려준다
+        } else {
+            print("1")
+            inputViewBottom.constant = 0
+        }
+        
+        print("keyboard ENd Frame  :\(keyboardFrame)")
     }
 }
 
@@ -82,11 +106,29 @@ extension TodoListViewController: UICollectionViewDataSource {
         var todo: Todo
         todo = indexPath.section == 0 ? todoListViewModel.todayTodos[indexPath.item] : todoListViewModel.upcompingTodos[indexPath.item]
         cell.updateUI(todo: todo)
-        
+//        var todo: Todo
+//        if indexPath.section == 0 {
+//            todo = todoListViewModel.todayTodos[indexPath.item]
+//        } else {
+//            todo = todoListViewModel.upcompingTodos[indexPath.item]
+//        }
+//        cell.updateUI(todo: todo)
         
         // TODO: todo 를 이용해서 updateUI
         // TODO: doneButtonHandler 작성
         // TODO: deleteButtonHandler 작성
+        
+        cell.doneButtonTapHandler = { isDone in
+            todo.isDone = isDone
+            self.todoListViewModel.updateTodo(todo)
+            self.collectionView.reloadData()
+        }
+        
+        cell.deleteButtonTapHandler = {
+            self.todoListViewModel.deleteTodo(todo)
+            self.collectionView.reloadData()
+        }
+        
         return cell
     }
     

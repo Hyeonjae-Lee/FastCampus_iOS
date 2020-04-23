@@ -42,7 +42,7 @@ class TodoManager {//Todo를 관리해줘야 한다.
         //TODO: create로직 추가
         let nextID = TodoManager.lastId + 1
         TodoManager.lastId = nextID
-        return Todo(id: 1, isDone: false, detail: detail, isToday: isToday)
+        return Todo(id: nextID, isDone: false, detail: detail, isToday: isToday)
     }
     
     func addTodo(_ todo: Todo) {
@@ -56,17 +56,16 @@ class TodoManager {//Todo를 관리해줘야 한다.
         
         todos = todos.filter { $0.id != todo.id }
         
-        if let index = todos.firstIndex(of: todo) {
-            todos.remove(at: index)
-        }
+//        if let index = todos.firstIndex(of: todo) {
+//            todos.remove(at: index)
+//        }
+        
         saveTodo()
     }
     
     func updateTodo(_ todo: Todo) {
         //TODO: updatee 로직 추가
-        guard let index = todos.firstIndex(of: todo) else {
-            return
-        }
+        guard let index = todos.firstIndex(of: todo) else { return }
         
         todos[index].update(isDone: todo.isDone, detail: todo.detail, isToday: todo.isToday)
         saveTodo() 
@@ -93,7 +92,7 @@ class TodoViewModel {
         var title: String {
             switch self {
             case .today: return "Today"
-            default: return "  "
+            default: return "Upcomming"
             }
         }
     }
