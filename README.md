@@ -11,7 +11,7 @@ this is my FastCampus iOS all in one lecture practicing app!
  초급 | 원피스 현상금 추천 앱  | 미수강|
  초급 | 원피스 현상금 추천 앱 업그레이드 | 수강완료 | 4.18
  중급 | 애플뮤직st 음악앱 | 수강완료 | 4.18 ~ 4.20
- 중급 | Todo List App | 미수강 |
+ 중급 | Todo List App | 수강완료 | 4.22 ~ 4.23
  중급 | 네트워킹 | 미수강|
  중급 | 넷플릭스 앱 및 확장편 | 미수강 | 
  중급 | Firebase | 미수강|
