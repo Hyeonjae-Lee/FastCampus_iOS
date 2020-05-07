@@ -113,3 +113,4 @@ class MovieFetcher {
 struct DummyItem {
     let thumbnail: UIImage
 }
+ 

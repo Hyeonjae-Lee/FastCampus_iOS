@@ -353,18 +353,65 @@
         <!--저장한 콘텐츠 목록-->
         <scene sceneID="G3y-va-xMY">
             <objects>
-                <viewController id="0DL-kq-S35" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HistoryViewController" id="0DL-kq-S35" customClass="HistoryViewController" customModule="MyNetflix" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P9C-bK-D6z">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CRf-t4-sRF">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryCell" rowHeight="86" id="LhO-bt-sVI" customClass="HistoryCell" customModule="MyNetflix" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="86"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LhO-bt-sVI" id="Rtt-wO-yr6">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="86"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="99x-OT-z6v">
+                                                    <rect key="frame" x="20" y="32.5" width="42" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="RVJ-bT-wnT"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="99x-OT-z6v" firstAttribute="centerY" secondItem="Rtt-wO-yr6" secondAttribute="centerY" id="7xu-u1-skR"/>
+                                                <constraint firstItem="99x-OT-z6v" firstAttribute="leading" secondItem="Rtt-wO-yr6" secondAttribute="leading" constant="20" id="vOi-Q1-3zj"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="searchTerm" destination="99x-OT-z6v" id="hTn-xl-5Io"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="0DL-kq-S35" id="mdO-o6-hgb"/>
+                                    <outlet property="delegate" destination="0DL-kq-S35" id="SFc-q5-rjX"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="OYX-Ro-fRu" firstAttribute="bottom" secondItem="CRf-t4-sRF" secondAttribute="bottom" id="31Z-Gy-65O"/>
+                            <constraint firstItem="CRf-t4-sRF" firstAttribute="leading" secondItem="OYX-Ro-fRu" secondAttribute="leading" id="K2b-o9-Znf"/>
+                            <constraint firstItem="OYX-Ro-fRu" firstAttribute="trailing" secondItem="CRf-t4-sRF" secondAttribute="trailing" id="ad1-nl-JCl"/>
+                            <constraint firstItem="CRf-t4-sRF" firstAttribute="top" secondItem="OYX-Ro-fRu" secondAttribute="top" id="iFm-Nd-Syr"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="OYX-Ro-fRu"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="저장한 콘텐츠 목록" image="square.and.arrow.down.fill" catalog="system" id="o4B-qf-7ZJ"/>
+                    <connections>
+                        <outlet property="tableView" destination="CRf-t4-sRF" id="ZvA-gW-EXK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="igm-fa-Xmf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4877" y="990"/>
+            <point key="canvasLocation" x="4876.811594202899" y="989.73214285714278"/>
         </scene>
         <!--Recommend List View Controller-->
         <scene sceneID="4xS-pn-Mnp">
@@ -648,6 +695,7 @@
                             <constraint firstAttribute="trailing" secondItem="bT4-Dy-fz8" secondAttribute="trailing" id="wMb-D4-qoq"/>
                             <constraint firstItem="GRy-08-iF2" firstAttribute="top" secondItem="nJz-jE-xiB" secondAttribute="top" constant="6" id="wy4-jf-Tdl"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="URb-cN-EEx"/>
                     </view>
                     <connections>
                         <outlet property="sectionTitle" destination="GRy-08-iF2" id="lt3-cm-5oD"/>
