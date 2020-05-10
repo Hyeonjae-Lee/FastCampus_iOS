@@ -19,17 +19,19 @@
 	<key>STORAGE_BUCKET</key>
 	<string>mynetflix-42fb0.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:1002912083940:ios:37a53055b7d0e7caf761f1</string>
+	<key>FirebaseScreenReportingEnabled</key>
+	<false/>
 	<key>DATABASE_URL</key>
 	<string>https://mynetflix-42fb0.firebaseio.com</string>
 </dict>
