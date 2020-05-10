@@ -20,7 +20,7 @@ this is my FastCampus iOS all in one lecture practicing app!
 
 ## 완강 여부
 
-> **미완강**
+> **수강중**
 
 ## 강의 정보 
 
