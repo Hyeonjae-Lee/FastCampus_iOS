@@ -16,7 +16,7 @@ this is my FastCampus iOS all in one lecture practicing app!
  중급 | 넷플릭스 영상 앱 및 확장편 | 수강완료 | 5.2 ~ 5.7
  중급 | Firebase | 수강 |
  고급 | 카메라앱 | 수강완료 | 5.10 ~ 5.10
- 고급 | CoreML 이용한 동물분류 앱  |미수강 |
+ 고급 | CoreML 이용한 동물분류 앱 | 수강완료 | 5.11 ~ 5.11 
 
 ## 완강 여부
 
