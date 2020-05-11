@@ -13,6 +13,7 @@
 		11063F691EC0EECC0033EE6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11063F681EC0EECC0033EE6D /* Assets.xcassets */; };
 		11063F741EC0F5270033EE6D /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11063F731EC0F5270033EE6D /* CGImagePropertyOrientation+UIImageOrientation.swift */; };
 		113695D81EC1151400CA6C43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 113695D61EC1151400CA6C43 /* LaunchScreen.storyboard */; };
+		1872BE972469875A0052DEFD /* MyDogCat.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1872BE962469875A0052DEFD /* MyDogCat.mlmodel */; };
 		C89947DA1F4639D6005C0A19 /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = C89947D91F4639A8005C0A19 /* MobileNet.mlmodel */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		11063F6D1EC0EECC0033EE6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11063F731EC0F5270033EE6D /* CGImagePropertyOrientation+UIImageOrientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGImagePropertyOrientation+UIImageOrientation.swift"; sourceTree = "<group>"; };
 		113695D71EC1151400CA6C43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1872BE962469875A0052DEFD /* MyDogCat.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = MyDogCat.mlmodel; path = MyDogCatClassifier.mlproj/Models/MyDogCat.mlmodel; sourceTree = SOURCE_ROOT; };
 		A9558E70A9563BA000000001 /* SampleCode.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = SampleCode.xcconfig; path = Configuration/SampleCode.xcconfig; sourceTree = "<group>"; };
 		A9666960A9666AD000000001 /* LICENSE.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		C858E5CC1ECA99CC006C5CAA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				11063F611EC0EECC0033EE6D /* AppDelegate.swift */,
 				11063F631EC0EECC0033EE6D /* ImageClassificationViewController.swift */,
 				11063F731EC0F5270033EE6D /* CGImagePropertyOrientation+UIImageOrientation.swift */,
+				1872BE962469875A0052DEFD /* MyDogCat.mlmodel */,
 				C89947D91F4639A8005C0A19 /* MobileNet.mlmodel */,
 				11063F651EC0EECC0033EE6D /* Main.storyboard */,
 				C82A1C951F1809F5005996F6 /* Supporting Files */,
@@ -171,6 +174,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1872BE972469875A0052DEFD /* MyDogCat.mlmodel in Sources */,
 				C89947DA1F4639D6005C0A19 /* MobileNet.mlmodel in Sources */,
 				11063F741EC0F5270033EE6D /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */,
 				11063F641EC0EECC0033EE6D /* ImageClassificationViewController.swift in Sources */,
@@ -250,7 +254,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -303,7 +307,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
